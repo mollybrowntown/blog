@@ -2,7 +2,6 @@
   "name": "blog",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://coloradomollybrown.netlify.app/blog",
   "dependencies": {
     "blueimp-md5": "^2.3.0",
     "bootstrap": "^4.5.0",
