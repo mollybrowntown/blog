@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "blueimp-md5": "^2.3.0",
+    "bootstrap": "^4.5.0",
     "feed": "^2.0.2",
     "import-all.macro": "^2.0.3",
     "lodash": "^4.17.11",
@@ -12,6 +13,7 @@
     "netlify-cli": "^2.6.0",
     "prismjs": "^1.15.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.8.6",
     "react-navi": "^0.13.3",
     "react-navi-helmet-async": "^0.13.3",

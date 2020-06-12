@@ -2,6 +2,7 @@
   margin: 0 auto;
   max-width: 42rem;
   padding: 2.625rem 1.3125rem;
+  /*padding-top: 40px;*/
 }
 
 .title {
@@ -12,6 +13,7 @@
   margin-top: 0;
   margin-bottom: 0;
   text-rendering: optimizeLegibility;
+  padding-top: 40px;
 }
 .title > a {
   color: var(--primary-color-light);

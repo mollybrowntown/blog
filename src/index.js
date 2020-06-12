@@ -7,6 +7,7 @@ import HelmetProvider from "react-navi-helmet-async";
 import "./index.module.css";
 import routes from "./routes";
 import * as serviceWorker from "./serviceWorker";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // `register()` is responsible for exporting your app's pages and App
 // component to the static renderer, and for starting the app with the

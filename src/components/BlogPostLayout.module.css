@@ -9,7 +9,7 @@
 }
 
 .header {
-  margin-bottom: 2.4rem;  
+  margin-bottom: 2.4rem;
 }
 .header .title {
   font-size: 2.5rem;
@@ -62,7 +62,7 @@
   margin-top: 3.5rem;
   text-rendering: optimizeLegibility;
 }
-  
+
 /**
 * Based on copypasta from Remy Bach and Sarah Drasner
 */
@@ -80,7 +80,7 @@
   tab-size: 4;
   hyphens: none;
 }
-  
+
 /* Code blocks */
 .content pre {
   overflow: auto;
@@ -91,12 +91,12 @@
 .content pre {
   background: hsla(0,0%,0%,0.9);
 }
-  
+
 .content pre::-moz-selection,
 .content pre::selection {
   background: hsl(207, 4%, 16%);
 }
-  
+
 /* Text Selection colour */
 .content pre::-moz-selection,
 .content pre ::-moz-selection {

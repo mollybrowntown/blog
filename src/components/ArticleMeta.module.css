@@ -9,3 +9,16 @@
 .tags li:not(:first-child)::before {
   content: ', ';
 }
+
+.author,
+.author li {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.author li:not(:first-child)::before {
+  content: ', ';
+}

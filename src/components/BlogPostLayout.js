@@ -5,7 +5,7 @@ import siteMetadata from '../siteMetadata'
 import ArticleMeta from './ArticleMeta'
 import Bio from './Bio'
 import styles from './BlogPostLayout.module.css'
-
+import BlogNav from './BlogNav'
 function BlogPostLayout({ blogRoot }) {
   let { title, data, url } = useCurrentRoute()
   let { connect, content, head } = useView()
@@ -17,6 +17,7 @@ function BlogPostLayout({ blogRoot }) {
   return connect(
     <>
       {head}
+      <BlogNav />
       <article className={styles.container}>
         <header className={styles.header}>
           <h1 className={styles.title}>

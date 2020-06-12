@@ -2,8 +2,8 @@ import React from 'react'
 import { compose, crawl, mount, resolve, route, withContext, withCrawlerPatterns } from 'navi'
 import { join } from 'path'
 import { fromPairs } from 'lodash'
-import TagIndexPage from '../components/TagIndexPage'
-import TagPage from '../components/TagPage'
+import AuthorIndexPage from '../components/AuthorIndexPage'
+import AuthorPage from '../components/AuthorPage'
 import routes from './index'
 
 async function crawlRoutes(root) {
@@ -25,46 +25,46 @@ async function crawlRoutes(root) {
 }
 crawlRoutes.cache = {}
 
-const tagRoutes = compose(
+const authorRoutes = compose(
   withContext((req, context) => ({
     ...context,
-    tagsRoot: req.mountpath,
+    authorRoot: req.mountpath,
   })),
   withCrawlerPatterns({
     '/:tag': async (req, context) => {
       if (!context.crawlingRoutes) {
-        return getAvailableTagsFromRoutes(
+        return getAvailableAuthorFromRoutes(
           await crawlRoutes(context.blogRoot)
-        ).map(tag => '/'+tag)
+        ).map(author => '/'+author)
       }
       return []
     }
   }),
   mount({
     '/': route({
-      title: 'Tags',
+      title: 'Author',
 
       getView: async (req, context) => {
         // Build a list of pages for each tag
         let routes = await crawlRoutes(context.blogRoot)
-        let tags = getAvailableTagsFromRoutes(routes)
-        let tagRoutes = fromPairs(tags.map(name => [name, []]))
+        let author = getAvailableAuthorFromRoutes(routes)
+        let tagRoutes = fromPairs(author.map(name => [name, []]))
         routes.forEach(route => {
           let data = route.data
-          if (data && data.tags) {
-            data.tags.forEach(tag => {
-              tag = tag
-              if (tagRoutes[tag]) {
-                tagRoutes[tag].push(route)
+          if (data && data.author) {
+            data.author.forEach(author => {
+              author = author
+              if (tagRoutes[author]) {
+                tagRoutes[author].push(route)
               }
             })
           }
         })
 
         return (
-          <TagIndexPage
+          <AuthorIndexPage
             blogRoot={context.blogRoot}
-            tags={tags.map(name => ({
+            author={author.map(name => ({
               name,
               href: join(req.mountpath, name),
               count: (tagRoutes[name] || []).length,
@@ -74,26 +74,26 @@ const tagRoutes = compose(
       },
     }),
 
-    '/:tag': route({
-      getTitle: req => req.params.tag,
+    '/:author': route({
+      getTitle: req => req.params.author,
       getView: async (req, context) => {
-        let lowerCaseTag = req.params.tag.toLowerCase()
+        let lowerCaseAuthor = req.params.author.toLowerCase()
         let routes = await crawlRoutes(context.blogRoot)
 
         // Build a list of pages that include the tag from the site map
-        let tagRoutes = []
+        let authorRoutes = []
         routes.forEach(route => {
-          let tags = (route.data && route.data.tags) || []
-          if (tags.find(metaTag => metaTag.toLowerCase() === lowerCaseTag)) {
-            tagRoutes.push(route)
+          let author = (route.data && route.data.author) || []
+          if (author.find(metaAuthor => metaAuthor.toLowerCase() === lowerCaseAuthor)) {
+            authorRoutes.push(route)
           }
         })
 
         return (
-          <TagPage
+          <AuthorPage
             blogRoot={context.blogRoot}
-            name={req.params.tag}
-            routes={tagRoutes}
+            name={req.params.author}
+            routes={authorRoutes}
           />
         )
       },
@@ -101,12 +101,12 @@ const tagRoutes = compose(
   }),
 )
 
-function getAvailableTagsFromRoutes(routes) {
+function getAvailableAuthorFromRoutes(routes) {
   return Array.from(
     new Set(
-      [].concat(...routes.map(route => (route.data && route.data.tags) || [])),
+      [].concat(...routes.map(route => (route.data && route.data.author) || [])),
     ),
   )
 }
 
-export default tagRoutes
+export default authorRoutes

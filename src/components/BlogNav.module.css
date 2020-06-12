@@ -1,0 +1,18 @@
+.navbar{
+  z-index: 1000;
+  font-family: 'Bebas Neue';
+  background: #373B44!important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4286f4, #373B44)!important;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4286f4, #373B44)!important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: fixed!important;
+  top:0!important;
+  width:100%!important;
+  -webkit-font-smoothing:antialiased!important;
+
+}
+.nav-link{
+  font-size: 1.5em!important;
+}
+.nav-link.active{
+  color:rgba(255,255,255,.5)!important;
+}

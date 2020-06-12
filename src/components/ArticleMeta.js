@@ -17,10 +17,18 @@ function ArticleMeta({ blogRoot, meta, readingTime }) {
         </span>
       </React.Fragment>
   }
-      
+
   return (
     <small className={styles.ArticleMeta}>
       <time dateTime={meta.date.toUTCString()}>{formatDate(meta.date)}</time>
+      {' '}&bull;{' '}
+      <ul className={styles.author}>
+        {meta.author.map(author =>
+          <li key={author}>
+            <Link href={join(blogRoot, 'author', author)}>{ author}</Link>
+          </li>
+        )}
+      </ul>
       {
         meta.tags &&
         meta.tags.length &&
