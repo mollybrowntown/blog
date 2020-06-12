@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://coloradomollybrown.netlify.app/blog",
   "dependencies": {
     "blueimp-md5": "^2.3.0",
     "bootstrap": "^4.5.0",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && navi-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "navi-scripts serve",
