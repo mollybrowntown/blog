@@ -10,7 +10,7 @@ function Pagination({ blogRoot, pageCount, pageNumber }) {
         pageNumber !== 1 &&
         <Link
           className={styles.previous}
-          href={join(blogRoot, 'page', String(pageNumber - 1))}>
+          href={join('/blog/', 'page', String(pageNumber - 1))}>
           ← Previous
         </Link>
       }

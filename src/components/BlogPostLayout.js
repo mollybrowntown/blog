@@ -40,7 +40,7 @@ function BlogPostLayout({ blogRoot }) {
         </MDXProvider>
         <footer className={styles.footer}>
           <h3 className={styles.title}>
-            <Link href={blogRoot}>
+            <Link href={'/blog/'}>
               {siteMetadata.title}
             </Link>
           </h3>

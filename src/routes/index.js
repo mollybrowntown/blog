@@ -66,7 +66,7 @@ let chunkPagePairs = chunks.map((chunk, i) => [
 const routes = compose(
   withContext((req, context) => ({
     ...context,
-    blogRoot: req.mountpath || '/',
+    blogRoot: req.mountpath || '/blog/',
   })),
   withView((req, context) => {
     // Check if the current page is an index page by comparing the remaining
@@ -82,9 +82,9 @@ const routes = compose(
     // The blog's index pages go here. The first index page is mapped to the
     // root URL, with a redirect from "/page/1". Subsequent index pages are
     // mapped to "/page/n".
-    '/': chunkPagePairs.shift()[1],
+    '/blog/': chunkPagePairs.shift()[1],
     '/page': mount({
-      '/1': redirect((req, context) => context.blogRoot),
+      '/1': redirect((req, context) => '/blog/'),
       ...fromPairs(chunkPagePairs),
     }),
 
@@ -92,14 +92,14 @@ const routes = compose(
     // "<BlogPostLayout />" that configures MDX and adds a post-specific layout.
     '/posts': compose(
       withView((req, context) => (
-        <BlogPostLayout blogRoot={context.blogRoot} />
+        <BlogPostLayout blogRoot={'/blog/'} />
       )),
       mount(fromPairs(posts.map(post => ['/' + post.slug, post.getPage]))),
     ),
 
     // Miscellaneous pages can be added directly to the root switch.
-    '/author': lazy(() => import('./author')),
-    '/tags': lazy(() => import('./tags')),
+    'blog/author': lazy(() => import('./author')),
+    'blog/tags': lazy(() => import('./tags')),
     '/about': lazy(() => import('./about')),
 
     // Only the statically built copy of the RSS feed is intended to be opened,

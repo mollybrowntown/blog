@@ -9,8 +9,8 @@ function TagPage({ blogRoot, name, routes }) {
       <ul>
         {routes.map(route =>
           <li key={route.url.href}>
-            <ArticleSummary blogRoot={blogRoot} route={route} />
-          </li>  
+            <ArticleSummary blogRoot={'/blog/'} route={route} />
+          </li>
         )}
       </ul>
     </div>
