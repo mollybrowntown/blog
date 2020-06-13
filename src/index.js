@@ -38,7 +38,7 @@ register({
     renderer(
       <HelmetProvider>
         {/* <Router navigation={navigation}/> */}
-        <Router navigation={navigation} basename={'/blog'}/>
+        <Router navigation={navigation} basename='/blog'/>
       </HelmetProvider>,
       document.getElementById("root")
     )
