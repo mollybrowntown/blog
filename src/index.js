@@ -32,12 +32,12 @@ register({
     // `ReactDOM.render` when it is empty.
     let hasStaticContent = process.env.NODE_ENV === "production";
     let renderer = hasStaticContent ? ReactDOM.hydrate : ReactDOM.render;
-
+    console.log(navigation)
     // Start react, passing in the current navigation state and
     // rendering the top-level view.
     renderer(
       <HelmetProvider>
-        <Router navigation={navigation} />
+        <Router navigation={navigation} basename={'blog'}/>
       </HelmetProvider>,
       document.getElementById("root")
     )
