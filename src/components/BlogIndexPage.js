@@ -21,13 +21,13 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
       <ul className={styles.articlesList}>
         {postRoutes.map(route => (
           <li key={route.url.href}>
-            <ArticleSummary blogRoot={'/blog/'} route={route} />
+            <ArticleSummary blogRoot={blogRoot} route={route} />
           </li>
         ))}
       </ul>
       {pageCount > 1 && (
         <Pagination
-          blogRoot={'/blog/'}
+          blogRoot={blogRoot}
           pageCount={pageCount}
           pageNumber={pageNumber}
         />
@@ -38,9 +38,9 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
             RSS
           </a> */}
           {/* <Link href="/about">About</Link> &bull;  */}
-          <Link href="/blog/tags">Tags</Link>{' '}
+          <Link href="/tags">Tags</Link>{' '}
           &bull;{' '}
-          <Link href="/blog/author">Authors</Link>{' '}
+          <Link href="/author">Authors</Link>{' '}
           {/* <a href="https://github.com/frontarm/create-react-blog">Source</a> */}
         </div>
       </footer>
