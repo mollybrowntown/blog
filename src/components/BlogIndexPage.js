@@ -38,9 +38,9 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
             RSS
           </a> */}
           {/* <Link href="/about">About</Link> &bull;  */}
-          <Link href="/tags">Tags</Link>{' '}
+          <Link href="/blog/tags">Tags</Link>{' '}
           &bull;{' '}
-          <Link href="/author">Authors</Link>{' '}
+          <Link href="/blog/author">Authors</Link>{' '}
           {/* <a href="https://github.com/frontarm/create-react-blog">Source</a> */}
         </div>
       </footer>

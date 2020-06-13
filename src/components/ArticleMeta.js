@@ -25,7 +25,7 @@ function ArticleMeta({ blogRoot, meta, readingTime }) {
       <ul className={styles.author}>
         {meta.author.map(author =>
           <li key={author}>
-            <Link href={join(blogRoot, 'author', author)}>{ author}</Link>
+            <Link href={join('/blog/', 'author', author)}>{ author}</Link>
           </li>
         )}
       </ul>
@@ -37,7 +37,7 @@ function ArticleMeta({ blogRoot, meta, readingTime }) {
           <ul className={styles.tags}>
             {meta.tags.map(tag =>
               <li key={tag}>
-                <Link href={join(blogRoot, 'tags', tag)}>{tag}</Link>
+                <Link href={join('/blog/', 'tags', tag)}>{tag}</Link>
               </li>
             )}
           </ul>
