@@ -37,7 +37,7 @@ register({
     // rendering the top-level view.
     renderer(
       <HelmetProvider>
-        <Router navigation={navigation} basename={'blog'}/>
+        <Router navigation={navigation} basename={'/blog'}/>
       </HelmetProvider>,
       document.getElementById("root")
     )
