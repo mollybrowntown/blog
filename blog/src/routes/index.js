@@ -18,6 +18,7 @@ import BlogPostLayout from '../components/BlogPostLayout'
 import siteMetadata from '../siteMetadata'
 import posts from './posts'
 
+
 // Split the posts into a list of chunks of the given size, and
 // then build index pages for each chunk.
 let chunks = chunk(posts, siteMetadata.indexPageSize)
