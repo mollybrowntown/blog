@@ -24,7 +24,6 @@ render(){
     </Navbar>
   )
 }
-
 };
 
 export default BlogNav;
