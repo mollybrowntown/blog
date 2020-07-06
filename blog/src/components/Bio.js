@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Bio.module.css'
-import { getGravatarURL } from '../utils/getGravatarURL'
 import photoURL from '../assets/badge-logo.png';
 function Bio(props) {
   // let photoURL = getGravatarURL({

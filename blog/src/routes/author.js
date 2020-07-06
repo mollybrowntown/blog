@@ -53,7 +53,7 @@ const authorRoutes = compose(
           let data = route.data
           if (data && data.author) {
             data.author.forEach(author => {
-              author = author
+              //author = author
               if (tagRoutes[author]) {
                 tagRoutes[author].push(route)
               }

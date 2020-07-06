@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavItem from 'react-bootstrap/Nav';
 import styles from './BlogNav.module.css'
 class BlogNav extends Component{
 render(){

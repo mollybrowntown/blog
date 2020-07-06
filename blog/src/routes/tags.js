@@ -53,7 +53,7 @@ const tagRoutes = compose(
           let data = route.data
           if (data && data.tags) {
             data.tags.forEach(tag => {
-              tag = tag
+              //tag = tag
               if (tagRoutes[tag]) {
                 tagRoutes[tag].push(route)
               }
