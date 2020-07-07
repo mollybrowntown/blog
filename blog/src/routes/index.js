@@ -33,7 +33,7 @@ let chunkPagePairs = chunks.map((chunk, i) => [
     // Get metadata for all pages on this page
     let postRoutes = await Promise.all(
       chunk.map(async post => {
-        let href = join(context.blogRoot, 'posts', post.slug)
+        let href = join(context.blogRoot, 'blog/posts', post.slug)
         return await resolve({
           // If you want to show the page content on the index page, set
           // this to 'GET' to be able to access it.
@@ -91,7 +91,7 @@ const routes = compose(
 
     // Put posts under "/posts", so that they can be wrapped with a
     // "<BlogPostLayout />" that configures MDX and adds a post-specific layout.
-    '/posts': compose(
+    '/blog/posts': compose(
       withView((req, context) => (
         <BlogPostLayout blogRoot={'/blog/'} />
       )),
