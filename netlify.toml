@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "cd blog && npm run build"
   publish = "/blog/public/"
 
 # Redirect rule defined in "_redirect" isn't working.
