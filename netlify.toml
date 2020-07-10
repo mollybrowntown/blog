@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "blog/public/build"
+  command = "cd blog && npm run build"
+  publish = "/public/build"
 
 # Redirect rule defined in "_redirect" isn't working.
 # using netlify.toml instead.
