@@ -7,7 +7,7 @@ class BlogNav extends Component{
 render(){
   return(
     <Navbar collapseOnSelect className={styles.navbar} expand="lg" variant="dark" fixed="top" style={{paddingTop:'5px',paddingLeft:'5px',paddingBottom:'1px'}}>
-      <Navbar.Brand href="../" style={{color:'white', fontSize:'1.5em'}}>
+      <Navbar.Brand href="https://www.coloradomollybrown.com/" style={{color:'white', fontSize:'1.5em'}}>
       <img
       alt=""
       src="/logo.png"
