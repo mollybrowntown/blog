@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://coloradomollybrown.netlify.app",
   "dependencies": {
+    "applause-button": "^3.3.2",
     "blueimp-md5": "^2.3.0",
     "bootstrap": "^4.5.0",
     "feed": "^2.0.2",
@@ -15,6 +16,8 @@
     "prismjs": "^1.15.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.1",
+    "react-clap": "0.0.1",
+    "react-clap-button": "^1.2.9",
     "react-dom": "^16.8.6",
     "react-navi": "^0.13.6",
     "react-navi-helmet-async": "^0.13.3",
